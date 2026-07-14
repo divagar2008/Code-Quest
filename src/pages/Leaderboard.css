@@ -1,0 +1,193 @@
+.leaderboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-tabs {
+  display: flex;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-1);
+}
+
+.filter-btn {
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn.active {
+  background-color: var(--color-bg-surface-hover);
+  color: var(--color-text-primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Podium Styles */
+.podium-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--spacing-4);
+  height: 250px;
+  margin-bottom: var(--spacing-6);
+}
+
+.podium-place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.podium-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-full);
+  border: 3px solid var(--color-bg-surface);
+  margin-bottom: -15px;
+  z-index: 2;
+  background-color: var(--color-bg-base);
+}
+
+.podium-bar {
+  width: 100px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: var(--spacing-2);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+}
+
+.first .podium-bar {
+  height: 140px;
+  background: linear-gradient(180deg, rgba(255, 200, 69, 0.8), rgba(255, 200, 69, 0.2));
+  color: #fff;
+  border: 1px solid var(--color-accent-secondary);
+  border-bottom: none;
+}
+
+.second .podium-bar {
+  height: 100px;
+  background: linear-gradient(180deg, rgba(192, 192, 192, 0.8), rgba(192, 192, 192, 0.2));
+  color: #fff;
+  border: 1px solid #c0c0c0;
+  border-bottom: none;
+}
+
+.third .podium-bar {
+  height: 80px;
+  background: linear-gradient(180deg, rgba(205, 127, 50, 0.8), rgba(205, 127, 50, 0.2));
+  color: #fff;
+  border: 1px solid #cd7f32;
+  border-bottom: none;
+}
+
+.podium-name {
+  margin-top: var(--spacing-2);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.first-icon {
+  position: absolute;
+  top: -45px;
+  color: var(--color-accent-secondary);
+  filter: drop-shadow(0 0 10px rgba(255, 200, 69, 0.5));
+}
+
+.first .podium-avatar {
+  width: 75px;
+  height: 75px;
+  border-color: var(--color-accent-secondary);
+}
+
+/* Table Styles */
+.leaderboard-table-container {
+  overflow-x: auto;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.leaderboard-table th {
+  padding: var(--spacing-3) var(--spacing-4);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.leaderboard-table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  vertical-align: middle;
+}
+
+.highlight-row {
+  background: linear-gradient(90deg, rgba(255, 200, 69, 0.05), transparent);
+}
+
+.rank-cell {
+  font-family: var(--font-code);
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  width: 60px;
+}
+
+.player-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-weight: 600;
+}
+
+.row-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255,255,255,0.1);
+}
+
+.xp-cell {
+  font-family: var(--font-code);
+  color: var(--color-accent-primary-end);
+  font-weight: 600;
+}
+
+.streak-cell {
+  color: var(--color-success);
+}
+
+.trend-cell {
+  width: 60px;
+  text-align: center;
+}
+
+.trend-up { color: #2ecc71; }
+.trend-down { color: var(--color-danger); }
+.trend-same { color: var(--color-text-secondary); }
+
+@media (max-width: 600px) {
+  .header-section {
+    flex-direction: column;
+    gap: var(--spacing-4);
+    align-items: flex-start;
+  }
+}

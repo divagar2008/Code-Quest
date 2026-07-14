@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String       @id @default(uuid())
+  email        String       @unique
+  passwordHash String
+  name         String
+  role         String       @default("Student") // "Student" or "Admin"
+  avatar       String?
+  xp           Int          @default(0)
+  keys         Int          @default(0)
+  streak       Int          @default(0)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  submissions  Submission[]
+  badges       UserBadge[]
+}
+
+model Challenge {
+  id          String       @id @default(uuid())
+  title       String
+  type        String       // quiz, debug, practice, game, boss
+  difficulty  String       // easy, medium, hard
+  xpReward    Int          @default(50)
+  content     String       // JSON string or text for problem statement
+  testCases   String?      // JSON string of test cases
+
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  submissions Submission[]
+}
+
+model Submission {
+  id           String    @id @default(uuid())
+  userId       String
+  challengeId  String
+  status       String    // passed, failed
+  score        Int?
+  timestamp    DateTime  @default(now())
+
+  user         User      @relation(fields: [userId], references: [id])
+  challenge    Challenge @relation(fields: [challengeId], references: [id])
+}
+
+model Badge {
+  id          String       @id @default(uuid())
+  name        String
+  description String
+  icon        String
+
+  users       UserBadge[]
+}
+
+model UserBadge {
+  id        String   @id @default(uuid())
+  userId    String
+  badgeId   String
+  earnedAt  DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  badge     Badge    @relation(fields: [badgeId], references: [id])
+
+  @@unique([userId, badgeId])
+}

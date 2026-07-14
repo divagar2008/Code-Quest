@@ -1,0 +1,46 @@
+/* Admin Theme Overrides */
+.admin-theme {
+  --color-bg-base: #0f0a14;
+  --color-bg-surface: #1a1225;
+  --color-accent-primary-start: #ff4d6d;
+  --color-accent-primary-end: #c9184a;
+  --color-accent-secondary-start: #ffb703;
+  --color-accent-secondary-end: #fb8500;
+  
+  --gradient-primary: linear-gradient(135deg, var(--color-accent-primary-start), var(--color-accent-primary-end));
+}
+
+.admin-theme .sidebar {
+  background-color: #120b18;
+  border-right: 1px solid rgba(255, 77, 109, 0.2);
+}
+
+.admin-theme .sidebar-nav .nav-item.active {
+  background: linear-gradient(90deg, rgba(255, 77, 109, 0.15), transparent);
+  border-right: 3px solid var(--color-accent-primary-start);
+  color: #fff;
+}
+
+.admin-theme .sidebar-nav .nav-item.active svg {
+  color: var(--color-accent-primary-start);
+}
+
+.admin-theme .sidebar-brand .brand-icon {
+  color: var(--color-danger);
+}
+
+.admin-theme .hud-container {
+  background-color: rgba(18, 11, 24, 0.8);
+  border-bottom: 1px solid rgba(255, 77, 109, 0.15);
+}
+
+.admin-theme .hud-profile .role {
+  color: var(--color-danger);
+  font-weight: bold;
+}
+
+.admin-theme .gradient-text {
+  background: linear-gradient(135deg, #ff4d6d, #fb8500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

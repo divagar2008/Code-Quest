@@ -1,0 +1,106 @@
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-base);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(127, 90, 240, 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(44, 177, 255, 0.05), transparent 25%);
+}
+
+.landing-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-8);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.landing-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.landing-brand .brand-icon {
+  color: var(--color-accent-primary-end);
+}
+
+.landing-brand .brand-text {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.hero-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-8) var(--spacing-4);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-6);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-8);
+  max-width: 600px;
+}
+
+.hero-btn {
+  font-size: 1.25rem;
+  padding: var(--spacing-4) var(--spacing-8);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  box-shadow: 0 0 20px rgba(127, 90, 240, 0.4);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+  padding: var(--spacing-8);
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--color-bg-surface);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.feature-card {
+  padding: var(--spacing-6);
+  background-color: var(--color-bg-base);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.feature-card h3 {
+  margin-bottom: var(--spacing-3);
+}
+
+.feature-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.5rem; }
+  .landing-nav { padding: var(--spacing-4); }
+}
